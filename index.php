@@ -18,8 +18,8 @@ try {
   // ENV Credentials
   $phpmailer->Host = "smtp.gmail.com";
   $phpmailer->Port = "587";
-  $phpmailer->Username = "phpassignmail@gmail.com";
-  $phpmailer->Password = "php1123!!";
+  $phpmailer->Username = "testmailassignmentphp@gmail.com";
+  $phpmailer->Password = "Hritik@123!";
   
   
 //   $mailertogo_domain = getenv("MAILERTOGO_DOMAIN", true);
