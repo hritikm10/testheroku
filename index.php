@@ -5,10 +5,11 @@ require_once("php-mailer/PHPMailer.php");
 require_once("php-mailer/SMTP.php");
 require_once("php-mailer/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
-
+// https://imgs.xkcd.com/comics/woodpecker.png
 // Passing true enables exceptions.
 $phpmailer = new PHPMailer(true);
 try {
+
   echo "in try";  // Configure SMTP
   $phpmailer->isSMTP();
   $phpmailer->SMTPAuth = true;
@@ -19,6 +20,7 @@ try {
   $phpmailer->Port = "587";
   $phpmailer->Username = "phpassignmail@gmail.com";
   $phpmailer->Password = "php1123!!";
+  $mail->AddAttachment = "https://imgs.xkcd.com/comics/woodpecker.png";
 //   $mailertogo_domain = getenv("MAILERTOGO_DOMAIN", true);
 
   // Mail Headers
