@@ -28,7 +28,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$mail->Host = "smtp.gmail.com";
 	$mail->Port = "587";
 	$mail->Username = "testmailassignmentphp@gmail.com";
-	$mail->Password = "Hritik@123!";
+	$mail->Password = "Hritik@123!!";
 	$mail->setFrom("testmailassignmentphp@gmail.com");
 	$mail->addAddress("hritikmiddha10@gmail.com");
 	$mail->isHTML(true);
@@ -36,10 +36,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$mail->Body = '
   	          <p>Hello XKCDian</p>
   	          Here is your new comic.
-  	          <h3>' . $comic['safe_title'] . "</h3>
-  	          <img src='" . $comic[' img'] . "' alt='some comic hehe'/>
+  	          <h3>' . $comic->safe_title . "</h3>
+  	          <img src='" . $comic->img . "' alt='some comic hehe'/>
 			<br />
-			To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic[' num'] . "'>Click here</a><br /> 
+			To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic->num . "'>Click here</a><br /> 
 			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
 	$mail->addStringAttachment(file_get_contents($img), "$subject");
 	if ($mail->send()) {
