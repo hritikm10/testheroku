@@ -10,7 +10,7 @@
 	?>
   <?php
 	$email = $_SESSION['email'];
-	$mail = new PHPMailer(true);
+	$phpmailer = new PHPMailer(true);
 	$phpmailer->isSMTP();
 	$phpmailer->SMTPAuth = true;
 	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -29,7 +29,7 @@
 			<strong>Email verification sent!!!</strong>  Please verify your email address.
 		  </div>';
 	} else {
-		echo "{$mail->ErrorInfo}";
+		echo "{$phpmailer->ErrorInfo}";
 	}
 
 
