@@ -30,7 +30,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$mail->Username = "testmailassignmentphp@gmail.com";
 	$mail->Password = "Hritik@123!!";
 	$mail->setFrom("testmailassignmentphp@gmail.com");
-	$mail->addAddress("hritikmiddha10@gmail.com");
+	$mail->addAddress($email);
 	$mail->isHTML(true);
 	$mail->Subject = "Mailer To Go Test";
 	$mail->Body = '
@@ -41,7 +41,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 			<br />
 			To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic->num . "'>Click here</a><br /> 
 			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
-	$mail->addStringAttachment(file_get_contents($img), "$subject");
+	$mail->addStringAttachment(file_get_contents($img), "$subject.jpg");
 	if ($mail->send()) {
 		echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
 				<strong>Email verification sent!!!</strong>  Please verify your email address.
