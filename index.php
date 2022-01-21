@@ -67,6 +67,8 @@ require 'vendor/autoload.php';
             $_SESSION['email'] = $email;
             $sql = "INSERT INTO `users` (`sno`, `email`, `tstamp`, `active`, `token`) VALUES (NULL, '$email', current_timestamp(), '0', '$token');";
             $result = mysqli_query($conn, $sql);
+
+
             $phpmailer = new PHPMailer(true);
             try {
                 $phpmailer->isSMTP();
@@ -75,23 +77,28 @@ require 'vendor/autoload.php';
                 $phpmailer->Host = "smtp.gmail.com";
                 $phpmailer->Port = "587";
                 $phpmailer->Username = "testmailassignmentphp@gmail.com";
-                $phpmailer->Password = "Hritik@123!";
+                $phpmailer->Password = "Hritik@123!!";
                 $phpmailer->setFrom("testmailassignmentphp@gmail.com");
                 $phpmailer->addAddress($email);
                 $phpmailer->isHTML(true);
                 $phpmailer->Subject = "Verify email";
                 $phpmailer->Body    = "You will be subscribed to XKCD challenge after verifying!
-                https://testheroku1088.herokuapp.com/welcome.php?token=$token";
+                https://xkcdhritik.herokuapp.com/welcome.php?token=$token\n";
                 if ($phpmailer->send()) {
-                    echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
-                        <strong>Email verification sent!!!</strong>  Please verify your email address.
-                      </div>';
-                }
+                echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
+                    <strong>Email verification sent!!!</strong>  Please verify your email address.
+                  </div>';
+            } else {
+                echo "{$mail->ErrorInfo}";
+            }
             } catch (Exception $e) {
-                echo '<br> <br><br> <div class="alert container alert-danger alert-dismissible fade show" role="alert">
-                <strong>Something Went Wrong!!!</strong>
-              </div>';
-            }      
+                echo "in catch";
+                echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+            }
+            
+
+           
+            
         } else {
             echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
         <strong>You have already Subscribed to XKCD challenge!!!</strong>
