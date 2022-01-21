@@ -83,7 +83,7 @@ require 'vendor/autoload.php';
                 $phpmailer->isHTML(true);
                 $phpmailer->Subject = "Verify email";
                 $phpmailer->Body    = "You will be subscribed to XKCD challenge after verifying!
-                https://xkcdhritik.herokuapp.com/welcome.php?token=$token\n";
+                https://testheroku1088.herokuapp.com/welcome.php?token=$token\n";
                 if ($phpmailer->send()) {
                 echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
                     <strong>Email verification sent!!!</strong>  Please verify your email address.
