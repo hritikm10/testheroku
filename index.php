@@ -34,7 +34,7 @@ try {
   $phpmailer->Subject = "Mailer To Go Test";
   $phpmailer->Body    = "<b>Hi</b>\nTest from Mailer To Go 😊\n";
   $phpmailer->AltBody = "Hi!\nTest from Mailer To Go 😊\n";
-  $phpmailer->addAttachment($url);
+  $phpmailer->addEmbeddedImage($url);
   $phpmailer->addStringAttachment(file_get_contents($url), 'abc.jpg');
   // Send the Email
   $phpmailer->send();
