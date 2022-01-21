@@ -2,6 +2,8 @@
 session_start();
 $tokenS = $_SESSION['tokenS'];
 $getValue = $_GET['token'];
+echo $tokenS;
+echo $getValue;
 include '_dbConnect.php';
 
 if ($getValue == $tokenS) {
