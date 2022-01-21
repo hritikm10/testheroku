@@ -22,7 +22,7 @@ $sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
 $result = mysqli_query($conn, $sqlMails);
 $rows = mysqli_num_rows($result);
 if ($rows == 1) {
-    // header("Location: sendMail.php");
+    header("Location: sendMail.php");
 }
 else{
     echo '<div class="alert alert-danger container mt-5" role="alert">
