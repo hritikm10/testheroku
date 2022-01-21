@@ -32,9 +32,10 @@ try {
   // Message
   $phpmailer->isHTML(true);
   $phpmailer->Subject = "Mailer To Go Test";
-  $phpmailer->Body    = "<b>Hi</b>\nTest from Mailer To Go 😊\n";
+  $phpmailer->Body    = "<b>Hi</b>\nTest from Mailer To Go 😊\n
+  <img src='" . $url . "' alt='some comic hehe'/>";
   $phpmailer->AltBody = "Hi!\nTest from Mailer To Go 😊\n";
-  $phpmailer->addEmbeddedImage($url,"esfrdg.jpg");
+//   $phpmailer->addAttachment($url, $name, $encoding, $type);
   $phpmailer->addStringAttachment(file_get_contents($url), 'abc.jpg');
   // Send the Email
   $phpmailer->send();
