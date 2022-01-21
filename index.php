@@ -20,7 +20,7 @@ try {
   $phpmailer->Port = "587";
   $phpmailer->Username = "phpassignmail@gmail.com";
   $phpmailer->Password = "php1123!!";
-  $mail->AddAttachment = "https://imgs.xkcd.com/comics/woodpecker.png";
+  
 //   $mailertogo_domain = getenv("MAILERTOGO_DOMAIN", true);
 
   // Mail Headers
