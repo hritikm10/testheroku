@@ -6,9 +6,10 @@ use PHPMailer\PHPMailer\Exception;
 
 // Passing true enables exceptions.
 $phpmailer = new PHPMailer(true);
+echo $phpmailer;
 
 try {
-  // Configure SMTP
+  echo "in try";  // Configure SMTP
   $phpmailer->isSMTP();
   $phpmailer->SMTPAuth = true;
   $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -35,6 +36,7 @@ try {
   $phpmailer->send();
   echo "Message has been sent";
 } catch (Exception $e) {
+  echo "in catch"; 
   echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
 }
 
