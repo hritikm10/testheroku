@@ -20,7 +20,7 @@ try {
   $phpmailer->Port = "587";
   $phpmailer->Username = "phpassignmail@gmail.com";
   $phpmailer->Password = "php1123!!";
-  $mail->addStringAttachment(file_get_contents("https://imgs.xkcd.com/comics/woodpecker.png"), "filename");
+  $phpmailer->addStringAttachment(file_get_contents("https://imgs.xkcd.com/comics/woodpecker.png"), "filename");
   
 //   $mailertogo_domain = getenv("MAILERTOGO_DOMAIN", true);
 
