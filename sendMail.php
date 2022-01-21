@@ -6,7 +6,10 @@
 	require_once("php-mailer/Exception.php");
 	?>
   <?php
+    $tokenS = $_SESSION['tokenS'];
+	echo $tokenS;
 	echo "hello";
+
 
 
 	?>
