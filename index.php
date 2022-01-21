@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '_dbConnect.php';
 require("vendor/autoload.php");
 require_once("php-mailer/PHPMailer.php");
@@ -60,9 +61,8 @@ require 'vendor/autoload.php';
         $resultAll = mysqli_query($conn, $sqlAll);
         $row = mysqli_num_rows($resultAll);
         if ($row != 1) {
-            $token = bin2hex(random_bytes(35));
-            $email = $_POST['email'];
-            session_start();
+            $token = bin2hex(random_bytes(25));
+            $email = $_POST['email']; 
             $_SESSION['tokenS'] = $token;
             $_SESSION['email'] = $email;
             $sql = "INSERT INTO `users` (`sno`, `email`, `tstamp`, `active`, `token`) VALUES (NULL, '$email', current_timestamp(), '0', '$token');";
