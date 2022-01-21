@@ -1,14 +1,15 @@
 <?php
   echo "Hritik";
 require("vendor/autoload.php");
+require_once("php-mailer/PHPMailer.php");
+require_once("php-mailer/SMTP.php");
+require_once("php-mailer/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 // Passing true enables exceptions.
 $phpmailer = new PHPMailer(true);
-
 try {
-  // Configure SMTP
+  echo "in try";  // Configure SMTP
   $phpmailer->isSMTP();
   $phpmailer->SMTPAuth = true;
   $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -16,7 +17,7 @@ try {
   // ENV Credentials
   $phpmailer->Host = "smtp.gmail.com";
   $phpmailer->Port = "587";
-  $phpmailer->Username = "testmailassignmentphp@gmail.com";
+  $phpmailer->Username = "testmailassignmentphp";
   $phpmailer->Password = "Hritik@123!";
 //   $mailertogo_domain = getenv("MAILERTOGO_DOMAIN", true);
 
@@ -35,6 +36,7 @@ try {
   $phpmailer->send();
   echo "Message has been sent";
 } catch (Exception $e) {
+  echo "in catch"; 
   echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
 }
 
