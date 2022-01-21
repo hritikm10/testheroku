@@ -1,0 +1,2 @@
+curl -s -X POST \
+  'https://testheroku1088.herokuapp.com/sendMail.php' \

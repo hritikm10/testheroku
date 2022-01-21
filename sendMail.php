@@ -10,7 +10,6 @@ $email = $_SESSION['email'];
 use PHPMailer\PHPMailer\PHPMailer;
 ?>
   <?php
-
 	$email = $_SESSION['email'];
 	$rand_comic = rand(0, 1000);
 	$api_url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
