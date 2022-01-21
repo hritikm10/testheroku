@@ -32,7 +32,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$mail->setFrom("testmailassignmentphp@gmail.com");
 	$mail->addAddress($email);
 	$mail->isHTML(true);
-	$mail->Subject = "Mailer To Go Test";
+	$mail->Subject = "New Comic Arrived...";
 	$mail->Body = '
   	          <p>Hello XKCDian</p>
   	          Here is your new comic.
