@@ -2,35 +2,12 @@
 session_start();
 $tokenS = $_SESSION['tokenS'];
 $getValue = $_GET['token'];
+echo $tokenS;
+echo "<br>";
+echo $getValue;
 include '_dbConnect.php';
 
-if ($getValue == $tokenS) {
-    $email = $_SESSION['email'];
-    $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`email` = '$email'";
-    $result = mysqli_query($conn, $sql);
-    if (!$result) {
-        // header("Location: index.php");
-    }
-} else {
-    echo '<br> <br><br> <div class="alert container alert-danger alert-dismissible fade show" role="alert">
-                <strong>Something Went Wrong!!!</strong>
-              </div>';
-    // header("Location: index.php");
-}
 
-$sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
-$result = mysqli_query($conn, $sqlMails);
-$rows = mysqli_num_rows($result);
-if ($rows == 1) {
-    header("Location: sendMail.php");
-}
-else{
-    echo '<div class="alert alert-danger container mt-5" role="alert">
-    <h4 class="alert-heading">Offo!</h4>
-    <p>Please Subscribe First to XKCD.</p>
-    <hr>
-    <button type="button" class="btn btn-info"><a href="/Assignment/index.php">Home Page</a> </button>';
-}
 ?>
 <!doctype html>
 <html lang="en">
