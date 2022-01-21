@@ -1,19 +1,25 @@
   <?php
 	session_start();
-	$email = $_SESSION['email'];
+
+	session_start();
+	include '_dbConnect.php';
 	require("vendor/autoload.php");
 	require_once("php-mailer/PHPMailer.php");
 	require_once("php-mailer/SMTP.php");
 	require_once("php-mailer/Exception.php");
+	$email = $_SESSION['email'];
+
+	use PHPMailer\PHPMailer\PHPMailer;
 	?>
   <?php
 	$mail = new PHPMailer(true);
 	try {
 		$email = $_SESSION['email'];
-		function getComic() {
-			$rand_comic = rand(0,1000);
+		function getComic()
+		{
+			$rand_comic = rand(0, 1000);
 			$url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
-			$result = json_decode( file_get_contents( $url ), true );
+			$result = json_decode(file_get_contents($url), true);
 			return $result;
 		}
 		$comic = getComic();
@@ -40,7 +46,7 @@
   	          <img src='" . $comic[' img'] . "' alt='some comic hehe'/>
 			<br />
 			To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic[' num'] . "'>Click here</a><br /> 
-			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" .$urlun."'>Click here</a><br />";
+			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
 		$mail->addStringAttachment(file_get_contents($url), "$subject");
 		$mail->send();
 		echo "Message has been sent";
