@@ -1,12 +1,9 @@
 <?php 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "xkcddb";
-    // $servername = "us-cdbr-east-05.cleardb.net";
-    // $username = "bbb1b74a1cdfb2";
-    // $password = "675d2913";
-    // $database = "heroku_b0ca9f11c1fddad";
+ 
+    $servername = "us-cdbr-east-05.cleardb.net";
+    $username = "bbb1b74a1cdfb2";
+    $password = "675d2913";
+    $database = "heroku_b0ca9f11c1fddad";
     $conn = mysqli_connect($servername,$username,$password,$database);
     if(!$conn)
     {
