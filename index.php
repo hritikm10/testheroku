@@ -22,8 +22,7 @@ require 'vendor/autoload.php';
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script>
@@ -31,11 +30,12 @@ require 'vendor/autoload.php';
     <title>XKCD challenge
     </title>
 
+
 </head>
 
 
 <body>
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <div class="card">
             <h5 class="card-header">XKCD</h5>
             <div class="card-body">
@@ -43,15 +43,29 @@ require 'vendor/autoload.php';
                 <form action="index.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Enter your emailID" name="email">
+                        
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    
                 </form>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="container1">
+        <form action="index.php" method="post">
+            <div class="brand-logo"></div>
+            <div class="brand-title">Subscribe to XKCD challenge</div>
+            <div class="inputs">
+                <label>EMAIL</label>
+                <input type="email" class="form-control" required placeholder="Enter your emailID" name="email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+        </form>
     </div>
+    
 
     <?php
 
@@ -62,7 +76,7 @@ require 'vendor/autoload.php';
         $row = mysqli_num_rows($resultAll);
         if ($row != 1) {
             $token = bin2hex(random_bytes(25));
-            $email = $_POST['email']; 
+            $email = $_POST['email'];
             $_SESSION['tokenS'] = $token;
             $_SESSION['email'] = $email;
             $sql = "INSERT INTO `users` (`sno`, `email`, `tstamp`, `active`, `token`) VALUES (NULL, '$email', current_timestamp(), '0', '$token');";
@@ -85,24 +99,20 @@ require 'vendor/autoload.php';
                 $phpmailer->Body    = "You will be subscribed to XKCD challenge after verifying!
                 https://testheroku1088.herokuapp.com/welcome.php?token=$token\n";
                 if ($phpmailer->send()) {
-                echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
-                    <strong>Email verification sent!!!</strong>  Please verify your email address.
-                  </div>';
-            } else {
-                echo "{$mail->ErrorInfo}";
-            }
+                    echo '<div class="alert">
+                    <p> <strong>Email verification sent!!! <br> </strong>  Please verify your email address.</p>
+                   </div>';
+                } else {
+                    echo "{$mail->ErrorInfo}";
+                }
             } catch (Exception $e) {
                 echo "in catch";
                 echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
             }
-            
-
-           
-            
         } else {
-            echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
-        <strong>You have already Subscribed to XKCD challenge!!!</strong>
-      </div>';
+            echo '<div class="alert">
+            <p> You have already Subscribed to XKCD</p>
+           </div>';
         }
     }
     ?>
