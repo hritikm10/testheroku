@@ -47,16 +47,17 @@
 			To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic[' num'] . "'>Click here</a><br /> 
 			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
 		$mail->addStringAttachment(file_get_contents($url), "$subject");
-		$mail->send();
-		echo "Message has been sent";
-		header("Location: success.php");
-	} catch (Exception $e) {
-		echo "in catch";
-		echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
-	}
-
-
-
+		if ($phpmailer->send()) {
+			echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
+				<strong>Email Verified!!!</strong>  Enjoy fre Comics.
+			  </div>';
+		} else {
+			echo "{$mail->ErrorInfo}";
+		}
+		} catch (Exception $e) {
+			echo "in catch";
+			echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+		}
 	?>
 
 
