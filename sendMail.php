@@ -1,14 +1,11 @@
   <?php
 	session_start();
-
-	session_start();
 	include '_dbConnect.php';
 	require("vendor/autoload.php");
 	require_once("php-mailer/PHPMailer.php");
 	require_once("php-mailer/SMTP.php");
 	require_once("php-mailer/Exception.php");
 	$email = $_SESSION['email'];
-
 	use PHPMailer\PHPMailer\PHPMailer;
 	?>
   <?php
