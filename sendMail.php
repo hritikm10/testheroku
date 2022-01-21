@@ -12,18 +12,7 @@
 	?>
   <?php
 	$email = $_SESSION['email'];
-	function getComic()
-	{
-		$rand_comic = rand(0, 1000);
-		$url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
-		$result = json_decode(file_get_contents($url), true);
-		return $result;
-	}
-	$comic = getComic();
-	$title = 'Your New Comic : ' . $comic['safe_title'];
-	$name = $response_data->title;
-	$subject = "$response_data->title";
-	$urlun = "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email";
+	
 	$mail = new PHPMailer(true);
 	try {
 		$phpmailer->isSMTP();
