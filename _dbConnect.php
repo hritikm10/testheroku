@@ -3,7 +3,7 @@
     $servername = "us-cdbr-east-05.cleardb.net";
     $username = "b9f2bfd24dad54";
     $password = "1c6feb65";
-    $database = "heroku_b0ca9f11c1fddad";
+    $database = "heroku_37d29324816bdc6";
     $conn = mysqli_connect($servername,$username,$password,$database);
     if(!$conn)
     {
