@@ -25,7 +25,7 @@ else {
 $sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
 $result = mysqli_query($conn, $sqlMails);
 $rows = mysqli_num_rows($result);
-if ($rows == 1) {
+if ($rows) {
     header("Location: sendMail.php");
 }
 else{
