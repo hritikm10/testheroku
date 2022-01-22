@@ -43,7 +43,7 @@ require 'vendor/autoload.php';
         $sqlAll = "SELECT * from users WHERE email='$email' AND active = '1'";
         $resultAll = mysqli_query($conn, $sqlAll);
         $row = mysqli_num_rows($resultAll);
-        if ($row != 1) {
+        if ($row == 0) {
             $token = bin2hex(random_bytes(25));
             $email = $_POST['email'];
             $_SESSION['tokenS'] = $token;
