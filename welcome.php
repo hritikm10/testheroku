@@ -11,7 +11,7 @@ if ($getValue == $tokenS) {
         // header("Location: index.php");
     }
 } else {
-    echo ' <div class="container1">
+    echo ' <div class="container2">
     <div class="brand-title" style="color: red;">Error!!!</div>
     <br> <br> <br>
     <p>Something Went Wrong!!!</p>
@@ -30,7 +30,7 @@ if ($rows == 1) {
     header("Location: sendMail.php");
 }
 else{
-    echo ' <div class="container1">
+    echo ' <div class="container2">
         <div class="brand-title" style="color: red;">Error!!!</div>
         <br> <br> <br>
         <p>You have not subscribed to XKCD!!!</p>
