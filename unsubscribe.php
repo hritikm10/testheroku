@@ -13,25 +13,25 @@ if ($email == $emailV) {
     session_destroy();
     if ($result) {
         echo '<div class="container1">
-        <div class="brand-title">Unsubscribed</div>
+        <div class="brand-title" style="color: red;">Error!!!</div>
         <br> <br> <br>
-        <p>you have been successfully Unsubscribed to XKCD</p>
+        <p>You have Successfully unsubscribed to XKCD!!!</p>
         <br> <br> <br>
         <div class="inputs">
-            <button  class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
+            <button class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
         </div>
     </div>';
     }
     else {
-        echo ' <div class="container1">
-            <div class="brand-title" style="color: red;">Error!!!</div>
-            <br> <br> <br>
-            <p>Something Went Wrong!!!</p>
-            <br> <br> <br>
-            <div class="inputs">
-                <button class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
-            </div>
-        </div>';
+        echo '<div class="container1">
+        <div class="brand-title" style="color: red;">Error!!!</div>
+        <br> <br> <br>
+        <p>You have not Subscribed to XKCD!!!</p>
+        <br> <br> <br>
+        <div class="inputs">
+            <button class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
+        </div>
+    </div> ';
         header("Location : index.php");
 } 
 
