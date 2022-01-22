@@ -40,7 +40,7 @@ require 'vendor/autoload.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $_POST['email'];
-        $sqlAll = "SELECT * from users WHERE email='$email'";
+        $sqlAll = "SELECT * from users WHERE email='$email' AND active = '1'";
         $resultAll = mysqli_query($conn, $sqlAll);
         $row = mysqli_num_rows($resultAll);
         if ($row != 1) {
