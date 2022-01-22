@@ -52,8 +52,8 @@ p {
 }
 
 .brand-logo {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   background: url("https://img.icons8.com/color/100/000000/login.png");
   margin: auto;
   border-radius: 50%;
@@ -65,7 +65,7 @@ p {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #1da1f2;
+  color: #1898e7;
   letter-spacing: 1px;
 }
 
