@@ -25,6 +25,8 @@ $email = $_SESSION['email'];
         <p><b>Enjoy Free Comics...</b> </p>
         <br>
         <p>Check Your mail now!!!</p>
+
+        
         
         <br> <br> <br>
         <div class="inputs">
