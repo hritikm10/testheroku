@@ -18,7 +18,7 @@ if ($email == $emailV) {
         <p>you have been successfully Unsubscribed to XKCD</p>
         <br> <br> <br>
         <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
+            <button  class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
         </div>
     </div>';
     }
@@ -29,7 +29,7 @@ if ($email == $emailV) {
             <p>Something Went Wrong!!!</p>
             <br> <br> <br>
             <div class="inputs">
-                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
+                <button class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
             </div>
         </div>';
         header("Location : index.php");
