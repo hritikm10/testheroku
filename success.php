@@ -22,9 +22,10 @@ $email = $_SESSION['email'];
         <div class="brand-title">Verified</div>
         <br> <br> <br>
         <p>you have been successfully Verified to XKCD</p>
+        <br>
         <p><b>Enjoy Free Comics...</b> </p>
         <br>
-        <p>Check Your mail now!!!</p>
+        <p>Check Your mail now!!! &#128525;</p>
 
 
 

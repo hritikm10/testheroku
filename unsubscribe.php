@@ -30,7 +30,7 @@ if ($email == $emailV) {
         echo '<div class="container1">
         <div class="brand-title" style="color: red;">unSubscribed!!!</div>
         <br> <br> <br>
-        <p>You have Successfully unsubscribed to XKCD!!!</p>
+        <p>You have unsubscribed from XKCD!!! &#x1F62D;</p>
         <br> <br> <br>
         <div class="inputs">
         <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
