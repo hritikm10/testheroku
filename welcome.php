@@ -14,9 +14,15 @@ if ($getValue == $tokenS) {
         // header("Location: index.php");
     }
 } else {
-    echo '<br> <br><br> <div class="alert container alert-danger alert-dismissible fade show" role="alert">
-                <strong>Something Went Wrong!!!</strong>
-              </div>';
+    echo ' <div class="container1">
+    <div class="brand-title" style="color: red;">Error!!!</div>
+    <br> <br> <br>
+    <p>Something Went Wrong!!!</p>
+    <br> <br> <br>
+    <div class="inputs">
+        <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
+    </div>
+</div>';
     // header("Location: index.php");
 }
 
@@ -27,11 +33,15 @@ if ($rows == 1) {
     header("Location: sendMail.php");
 }
 else{
-    echo '<div class="alert alert-danger container mt-5" role="alert">
-    <h4 class="alert-heading">Offo!</h4>
-    <p>Please Subscribe First to XKCD.</p>
-    <hr>
-    <button type="button" class="btn btn-info"><a href="https://xkcdhritik.herokuapp.com/index.php">Home Page</a> </button>';
+    echo ' <div class="container1">
+        <div class="brand-title" style="color: red;">Error!!!</div>
+        <br> <br> <br>
+        <p>You have not subscribed to XKCD!!!</p>
+        <br> <br> <br>
+        <div class="inputs">
+            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
+        </div>
+    </div>';
 }
 ?>
 <!doctype html>

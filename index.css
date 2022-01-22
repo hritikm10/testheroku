@@ -96,8 +96,7 @@ input {
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
-
-button {
+button { 
   margin-top: 20px;
   background: #1da1f2;
   height: 40px;
@@ -111,8 +110,6 @@ button {
 button:hover {
   box-shadow: none;
 }
-
-
 
 h1 {
   position: absolute;

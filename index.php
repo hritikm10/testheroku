@@ -16,44 +16,13 @@ require 'vendor/autoload.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script>
     </script>
     <title>XKCD challenge
     </title>
-
-
 </head>
-
-
 <body>
-    <!-- <div class="container mt-5">
-        <div class="card">
-            <h5 class="card-header">XKCD</h5>
-            <div class="card-body">
-                <h5 class="card-title">Subscribe to XKCD challenge</h5>
-                <form action="index.php" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <br>
-                    
-                </form>
-            </div>
-        </div>
-    </div> -->
-
-
     <div class="container1">
         <form action="index.php" method="post">
             <div class="brand-logo"></div>
@@ -61,7 +30,7 @@ require 'vendor/autoload.php';
             <div class="inputs">
                 <label>EMAIL</label>
                 <input type="email" class="form-control" required placeholder="Enter your emailID" name="email" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit"> <span>Subscribe</span> </button>
             </div>
         </form>
     </div>
@@ -143,9 +112,7 @@ require 'vendor/autoload.php';
 
 
 
-    <!-- Bootstrap scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- Bootstrap scripts end-->
+    
     <!-- Form control for preventing reload -->
     <script>
         if (window.history.replaceState) {
