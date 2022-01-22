@@ -54,7 +54,7 @@ require 'vendor/autoload.php';
 
             $phpmailer = new PHPMailer(true);
             try {
-                $indexPage = "https://testheroku1088.herokuapp.com/index.php";
+               
                 $phpmailer->isSMTP();
                 $phpmailer->SMTPAuth = true;
                 $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;

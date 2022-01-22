@@ -18,6 +18,7 @@ session_start();
 $email = $_SESSION['email'];
 $emailV = $_GET['email'];
 if ($email == $emailV) {
+    $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     include '_dbConnect.php';
     $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$email'";
     $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$email'";
