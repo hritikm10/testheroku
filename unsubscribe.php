@@ -1,8 +1,22 @@
 <?php
 session_start();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script>
+    </script>
+    <title>Unsubscribed
+    </title>
+</head>
+
+<body>
+<?php
 $email = $_SESSION['email'];
 $emailV = $_GET['email'];
-
 if ($email == $emailV) {
     include '_dbConnect.php';
     $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$email'";
@@ -13,7 +27,7 @@ if ($email == $emailV) {
     session_destroy();
     if ($result) {
         echo '<div class="container1">
-        <div class="brand-title" style="color: red;">Error!!!</div>
+        <div class="brand-title" style="color: red;">unSubscribed!!!</div>
         <br> <br> <br>
         <p>You have Successfully unsubscribed to XKCD!!!</p>
         <br> <br> <br>
@@ -37,20 +51,7 @@ if ($email == $emailV) {
 
 }
 ?>
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <script>
-    </script>
-    <title>Unsubscribed
-    </title>
-</head>
-
-<body>
+?>
 
 </body>
 
