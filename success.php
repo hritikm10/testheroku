@@ -22,6 +22,9 @@ $email = $_SESSION['email'];
         <div class="brand-title">Verified</div>
         <br> <br> <br>
         <p>you have been successfully Verified to XKCD</p>
+        <p>Enjoy Free Comics</p>
+        <p>Check Your mail now!!!</p>
+        
         <br> <br> <br>
         <div class="inputs">
             <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email" ?>">UnSubscribe</a></button>
