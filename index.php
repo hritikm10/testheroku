@@ -76,8 +76,9 @@ require 'vendor/autoload.php';
                     echo "{$mail->ErrorInfo}";
                 }
             } catch (Exception $e) {
-                echo "in catch";
-                echo "Message could not be sent. Mailer Error: {$phpmailer->ErrorInfo}";
+                echo '<div class="alert">
+                <p> Something Went Wrong</p>
+               </div>';
             }
         } else {
             echo '<div class="alert">

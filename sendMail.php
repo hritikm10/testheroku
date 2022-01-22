@@ -10,6 +10,7 @@ $email = $_SESSION['email'];
 use PHPMailer\PHPMailer\PHPMailer;
 ?>
   <?php
+    $indexPage = "https://testheroku1088.herokuapp.com/index.php";
 	$email = $_SESSION['email'];
 	$rand_comic = rand(0, 1000);
 	$api_url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
@@ -42,13 +43,19 @@ use PHPMailer\PHPMailer\PHPMailer;
 			To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
 	$mail->addStringAttachment(file_get_contents($img), "$subject.jpg");
 	if ($mail->send()) {
-		echo '<br> <br><br> <div class="alert container alert-success alert-dismissible fade show" role="alert">
-				<strong>Email verification sent!!!</strong>  Please verify your email address.
-			  </div>';
+		header("Location: success.php");
 	} else {
-		echo "{$mail->ErrorInfo}";
+		echo '<div class="container2">
+        <div class="brand-title" style="color: red;">Error!!!</div>
+        <br> <br> <br>
+        <p>You have not subscribed to XKCD!!!</p>
+        <br> <br> <br>
+        <div class="inputs">
+            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
+        </div>
+    </div>';
 	}
-	header("Location: success.php");
+	
 	?>
 
 

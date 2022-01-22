@@ -8,10 +8,8 @@ if ($getValue == $tokenS) {
     $email = $_SESSION['email'];
     $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`email` = '$email'";
     $result = mysqli_query($conn, $sql);
-    if (!$result) {
-        // header("Location: index.php");
-    }
-} else {
+} 
+else {
     echo ' <div class="container2">
     <div class="brand-title" style="color: red;">Error!!!</div>
     <br> <br> <br>
