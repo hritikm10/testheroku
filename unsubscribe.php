@@ -37,20 +37,10 @@ if ($email == $emailV) {
     </div>';
     }
     else {
-        echo '<div class="container1">
-        <div class="brand-title" style="color: red;">Error!!!</div>
-        <br> <br> <br>
-        <p>You have not Subscribed to XKCD!!!</p>
-        <br> <br> <br>
-        <div class="inputs">
-            <button class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
-        </div>
-    </div> ';
         header("Location : index.php");
 } 
 
 }
-?>
 ?>
 
 </body>
