@@ -22,19 +22,20 @@ if ($email == $emailV) {
             </div>
         </div>';
     }
-} else {
-    echo ' <div class="container1">
-        <div class="brand-title" style="color: red;">Error!!!</div>
-        <br> <br> <br>
-        <p>Something Went Wrong!!!</p>
-        <br> <br> <br>
-        <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
-        </div>
-    </div>';
-    header("Location : index.php");
-}
+    else {
+        echo ' <div class="container1">
+            <div class="brand-title" style="color: red;">Error!!!</div>
+            <br> <br> <br>
+            <p>Something Went Wrong!!!</p>
+            <br> <br> <br>
+            <div class="inputs">
+                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>Subscribe</a></button>
+            </div>
+        </div>';
+        header("Location : index.php");
+} 
 
+}
 ?>
 <!doctype html>
 <html lang="en">
