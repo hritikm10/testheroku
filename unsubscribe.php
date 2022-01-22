@@ -38,7 +38,7 @@ if ($email == $emailV) {
     </div>';
     }
     else {
-        header("Location : index.php");
+        header("Location : https://testheroku1088.herokuapp.com/index.php");
 } 
 
 }
