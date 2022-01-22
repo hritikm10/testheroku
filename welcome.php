@@ -4,6 +4,7 @@ $tokenS = $_SESSION['tokenS'];
 $getValue = $_GET['token'];
 include '_dbConnect.php';
 if ($getValue == $tokenS) {
+    $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     $email = $_SESSION['email'];
     $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`email` = '$email'";
     $result = mysqli_query($conn, $sql);
@@ -17,7 +18,7 @@ if ($getValue == $tokenS) {
     <p>Something Went Wrong!!!</p>
     <br> <br> <br>
     <div class="inputs">
-        <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
+    <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
     </div>
 </div>';
     // header("Location: index.php");
@@ -36,7 +37,7 @@ else{
         <p>You have not subscribed to XKCD!!!</p>
         <br> <br> <br>
         <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/index.php" ?>">Subscribe</a></button>
+            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
         </div>
     </div>';
 }
