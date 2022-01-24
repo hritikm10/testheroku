@@ -12,6 +12,7 @@ use PHPMailer\PHPMailer\PHPMailer;
     $result = mysqli_query($conn , $sql);
     while($row = mysqli_fetch_assoc($result))
     {
+        $email = $row['email'];
         $indexPage = "https://testheroku1088.herokuapp.com/index.php";
         $rand_comic = rand(0, 1000);
         $api_url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
@@ -21,7 +22,7 @@ use PHPMailer\PHPMailer\PHPMailer;
         $name = $comic->title;
         $img = $comic->img;
         $subject = "$comic->title";
-        $urlun = 'https://testheroku1088.herokuapp.com/unsubscribe.php?email='.$row['email'].'';
+        $urlun = "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email";
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->SMTPAuth = true;
@@ -31,7 +32,7 @@ use PHPMailer\PHPMailer\PHPMailer;
         $mail->Username = "testmailassignmentphp@gmail.com";
         $mail->Password = "Hritik@123!!";
         $mail->setFrom("testmailassignmentphp@gmail.com");
-        $mail->addAddress($row['email']);
+        $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "New Comic Arrived...";
         $mail->Body = '
@@ -41,7 +42,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                     <img src='" . $comic->img . "' alt='some comic hehe'/>
                 <br />
                 To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic->num . "'>Click here</a><br /> 
-                To Unsubscribe the Xkcd,  -->  $urlun ";
+                To Unsubscribe the Xkcd,  --> <a target='_blank' href='" . $urlun . "'>Click here</a><br />";
         $mail->addStringAttachment(file_get_contents($img), "$subject.jpg");
         if ($mail->send()) {
             
