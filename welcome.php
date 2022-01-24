@@ -10,7 +10,7 @@ if ($getValue == $tokenS) {
     $result = mysqli_query($conn, $sql);
 } 
 else {
-    // header("Location: index.php");
+    
 }
 
 $sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
@@ -26,6 +26,10 @@ else{
         <p>You have not subscribed to XKCD!!!</p>
         <br> 
     </div>';
+    echo '<script>
+    alert("Unauthorize Access!!! , Subscribe first.")
+</script>';
+header("Location: index.php");
 }
 ?>
 <!doctype html>
