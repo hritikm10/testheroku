@@ -23,13 +23,9 @@ else{
     echo ' <div class="container2">
         <div class="brand-title" style="color: red;">Error!!!</div>
         <br> <br> <br>
-        <p>You have not subscribed to XKCD!!!</p>
+        <p>Unauthorised access to XKCD!!!, Please subscribe it from your email id.</p>
         <br> 
     </div>';
-    echo '<script>
-    alert("Unauthorize Access!!! , Subscribe first.");
-</script>';
-header("Location: index.php");
 }
 ?>
 <!doctype html>
