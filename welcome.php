@@ -10,7 +10,7 @@ if ($getValue == $tokenS) {
     $result = mysqli_query($conn, $sql);
 } 
 else {
-    header("Location: index.php");
+    // header("Location: index.php");
 }
 
 $sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
