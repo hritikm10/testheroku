@@ -15,13 +15,13 @@ session_start();
 
 <body>
 <?php
-$email = $_SESSION['email'];
 $emailV = $_GET['email'];
-if ($email == $emailV) {
+if ($emailV) {
+    $sql = "SELECT * FROM users WHERE active = '1' and email = '$emailV'";
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     include '_dbConnect.php';
-    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$email'";
-    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$email'";
+    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$emailV'";
+    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$emailV'";
     $result = mysqli_query($conn, $sql);
     $resultDel = mysqli_query($conn, $sqldel);
     session_unset();
@@ -38,7 +38,7 @@ if ($email == $emailV) {
     </div>';
     }
     else {
-        header("Location : https://testheroku1088.herokuapp.com/index.php");
+        header("Location : index.php");
 } 
 
 }

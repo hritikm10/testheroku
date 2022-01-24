@@ -22,7 +22,7 @@ use PHPMailer\PHPMailer\PHPMailer;
         $name = $comic->title;
         $img = $comic->img;
         $subject = "$comic->title";
-        $urlun = "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email";
+        $urlun = "https://testheroku1088.herokuapp.com/unsubscribeAfter.php?email=$email";
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->SMTPAuth = true;
