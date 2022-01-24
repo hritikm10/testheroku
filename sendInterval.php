@@ -21,7 +21,6 @@ use PHPMailer\PHPMailer\PHPMailer;
         $name = $comic->title;
         $img = $comic->img;
         $subject = "$comic->title";
-        $urlun = 'https://testheroku1088.herokuapp.com/unsubscribe.php?email='.$row['email'].'';
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->SMTPAuth = true;
@@ -41,7 +40,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                     <img src='" . $comic->img . "' alt='some comic hehe'/>
                 <br />
                 To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic->num . "'>Click here</a><br /> 
-                To Unsubscribe the Xkcd,  --> <a target='_blank' href='. $urlun .'>Click here</a><br />";
+                To Unsubscribe the Xkcd,  --> <a target='_blank' href='https://testheroku1088.herokuapp.com/unsubscribe.php?email=".$row['email']."'>Click here</a><br />";
         $mail->addStringAttachment(file_get_contents($img), "$subject.jpg");
         if ($mail->send()) {
 
