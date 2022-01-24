@@ -27,7 +27,7 @@ else{
         <br> 
     </div>';
     echo '<script>
-    alert("Unauthorize Access!!! , Subscribe first.")
+    alert("Unauthorize Access!!! , Subscribe first.");
 </script>';
 header("Location: index.php");
 }
