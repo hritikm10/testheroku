@@ -10,16 +10,7 @@ if ($getValue == $tokenS) {
     $result = mysqli_query($conn, $sql);
 } 
 else {
-    echo ' <div class="container2">
-    <div class="brand-title" style="color: red;">Error!!!</div>
-    <br> <br> <br>
-    <p>Something Went Wrong!!!</p>
-    <br> <br> <br>
-    <div class="inputs">
-    <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
-    </div>
-</div>';
-    // header("Location: index.php");
+    header("Location: index.php");
 }
 
 $sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
@@ -33,10 +24,7 @@ else{
         <div class="brand-title" style="color: red;">Error!!!</div>
         <br> <br> <br>
         <p>You have not subscribed to XKCD!!!</p>
-        <br> <br> <br>
-        <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
-        </div>
+        <br> 
     </div>';
 }
 ?>
