@@ -41,9 +41,10 @@ use PHPMailer\PHPMailer\PHPMailer;
                     <img src='" . $comic->img . "' alt='some comic hehe'/>
                 <br />
                 To read the comic,  --> <a target='_blank' href='https://xkcd.com/" . $comic->num . "'>Click here</a><br /> 
-                To Unsubscribe the Xkcd,  --> " . $urlun . "";
+                To Unsubscribe the Xkcd,  --> <a target='_blank' href=''. $urlun .''>Click here</a><br />";
         $mail->addStringAttachment(file_get_contents($img), "$subject.jpg");
         if ($mail->send()) {
+
      
         } else {
             echo '<div class="container2">
