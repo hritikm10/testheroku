@@ -1,5 +1,30 @@
 <?php
 session_start();
+?>
+
+<!doctype html>
+<html lang="en">
+    
+
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script>
+    </script>
+    <title>Welcome
+    </title>
+</head>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+
+<?php
 $tokenS = $_SESSION['tokenS'];
 $getValue = $_GET['token'];
 include '_dbConnect.php';
@@ -28,24 +53,3 @@ else{
     </div>';
 }
 ?>
-<!doctype html>
-<html lang="en">
-    
-
-<head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <script>
-    </script>
-    <title>Welcome
-    </title>
-</head>
-</head>
-
-<body>
-
-
-</body>
-
-</html>
