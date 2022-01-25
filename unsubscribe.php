@@ -18,7 +18,7 @@ session_start();
 // $email = $_SESSION['email'];
 $getEmail = $_GET['email'];
 $getToken = $_GET['token'];
-if ($getEmail && $$getToken) {
+if ($getEmail && $getToken) {
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     include '_dbConnect.php';
     $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$getEmail' AND `users`.`token` = '$getToken'";
