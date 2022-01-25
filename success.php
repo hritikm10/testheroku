@@ -26,7 +26,7 @@ $getEmail = $_GET['email'];
         <p><b>Enjoy Free Comics...</b> </p>
         <br>
         <p>Check Your mail now!!! &#128525;</p>
-        <button><a href="https://mail.google.com/mail/u/0/#inbox">Go to gmail...</a> </button>
+
 
 
 
