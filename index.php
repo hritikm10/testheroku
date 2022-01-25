@@ -67,7 +67,7 @@ require 'vendor/autoload.php';
                 $phpmailer->Subject = "Verify email";
                 $welcomePage = "https://testheroku1088.herokuapp.com/welcome.php?token=$token&email=$email";
                 $phpmailer->Body    = 'You will be subscribed to XKCD challenge after verifying!
-                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$welcomePage.'>Subscribe</a></button>
+                <button type="submit" "><a style="color: black; text-decoration: none;" href='.$welcomePage.'>Subscribe</a></button>
                 ';
                 if ($phpmailer->send()) {
                     echo '<div class="alert">
