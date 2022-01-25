@@ -32,14 +32,20 @@ include '_dbConnect.php';
 if ($getValue) {
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     // $email = $_SESSION['email'];
-    $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`token` = '$getValue'";
+    $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`token` = '$getValue' AND `users`.`token` = '$getValue'";
     $result = mysqli_query($conn, $sql);
 } 
 else {
+    // echo ' <div class="container2">
+    //     <div class="brand-title" style="color: red;">Error!!!</div>
+    //     <br> <br> <br>
+    //     <p>Unauthorised access to XKCD!!!, Please subscribe it from your email id.</p>
+    //     <br> 
+    // </div>';
     
 }
 
-$sqlMails = "SELECT * from users WHERE token='$getValue' AND active = '1' ";
+$sqlMails = "SELECT * from users WHERE token='$getValue' AND email='$getEmail' AND active = '1' ";
 $result = mysqli_query($conn, $sqlMails);
 $rows = mysqli_num_rows($result);
 if ($rows) {

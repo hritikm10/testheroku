@@ -16,12 +16,13 @@ session_start();
 <body>
 <?php
 $emailV = $_GET['email'];
+$tokenV = $_GET['token'];
 if ($emailV) {
-    $sql = "SELECT * FROM users WHERE active = '1' and email = '$emailV'";
+    $sql = "SELECT * FROM users WHERE active = '1' and email = '$emailV' and token = '$tokenV'";
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     include '_dbConnect.php';
-    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$emailV'";
-    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$emailV'";
+    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$emailV' AND `users`.`token` = '$tokenV'";
+    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$emailV' AND `users`.`token` = '$tokenV'";
     $result = mysqli_query($conn, $sql);
     $resultDel = mysqli_query($conn, $sqldel);
     // session_unset();

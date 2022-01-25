@@ -13,6 +13,7 @@ use PHPMailer\PHPMailer\PHPMailer;
     while($row = mysqli_fetch_assoc($result))
     {
         $email = $row['email'];
+        $token = $row['token'];
         $indexPage = "https://testheroku1088.herokuapp.com/index.php";
         $rand_comic = rand(0, 1000);
         $api_url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
@@ -22,7 +23,7 @@ use PHPMailer\PHPMailer\PHPMailer;
         $name = $comic->title;
         $img = $comic->img;
         $subject = "$comic->title";
-        $urlun = "https://testheroku1088.herokuapp.com/unsubscribeAfter.php?email=$email";
+        $urlun = "https://testheroku1088.herokuapp.com/unsubscribeAfter.php?email=$email&token=$token";
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->SMTPAuth = true;
