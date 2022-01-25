@@ -6,11 +6,12 @@ require_once("php-mailer/PHPMailer.php");
 require_once("php-mailer/SMTP.php");
 require_once("php-mailer/Exception.php");
 // $email = $_SESSION['email'];
-$getToken = $_GET['token'];
-$getEmail = $_GET['email'];
+
 use PHPMailer\PHPMailer\PHPMailer;
 ?>
   <?php
+    $getToken = $_GET['token'];
+	$getEmail = $_GET['email'];
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
 	// $email = $_SESSION['email'];
 	$rand_comic = rand(0, 1000);
