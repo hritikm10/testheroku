@@ -52,7 +52,7 @@ use PHPMailer\PHPMailer\PHPMailer;
         <p>You have not subscribed to XKCD!!!</p>
         <br> <br> <br>
         <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
+            <button type="submit" class="btn btn-primary"><a style="color: black; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
         </div>
     </div>';
 	}
