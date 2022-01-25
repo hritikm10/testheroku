@@ -34,7 +34,7 @@ if ($emailV) {
         <p>You have unsubscribed from XKCD!!! &#x1F62D;</p>
         <br> <br> <br>
         <div class="inputs">
-        <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
+        <button type="submit" class="btn btn-primary"><a style="color: black; text-decoration: none;" href='.$indexPage.'>Subscribe</a></button>
         </div>
     </div>';
     }
