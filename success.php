@@ -1,6 +1,6 @@
 <?php
-session_start();
-$email = $_SESSION['email'];
+$getToken = $_GET['token'];
+$getEmail = $_GET['email'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +31,7 @@ $email = $_SESSION['email'];
 
         <br> <br> <br>
         <div class="inputs">
-            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email" ?>">UnSubscribe</a></button>
+            <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="<?php echo "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$getEmail&token=$getToken" ?>">UnSubscribe</a></button>
         </div>
 
 
