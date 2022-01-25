@@ -7,7 +7,7 @@ require_once("php-mailer/SMTP.php");
 require_once("php-mailer/Exception.php");
 // $email = $_SESSION['email'];
 $getToken = $_GET['token'];
-$getEmail = $_GET['token'];
+$getEmail = $_GET['email'];
 use PHPMailer\PHPMailer\PHPMailer;
 ?>
   <?php
