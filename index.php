@@ -18,14 +18,14 @@ require 'vendor/autoload.php';
     <link rel="stylesheet" href="index.css">
     <script>
     </script>
-    <title>XKCD challenge
+    <title>XKCD Comic Mailer
     </title>
 </head>
 <body>
     <div class="container1">
         <form action="index.php" method="post">
             <div class="brand-logo"></div>
-            <div class="brand-title">Subscribe to XKCD challenge</div>
+            <div class="brand-title">Subscribe to XKCD comic Mailer</div>
             <div class="inputs">
                 <label>EMAIL</label>
                 <input type="email" class="form-control" required placeholder="Enter your emailID" name="email" required>
@@ -66,7 +66,7 @@ require 'vendor/autoload.php';
                 $phpmailer->isHTML(true);
                 $phpmailer->Subject = "Verify email";
                 $welcomePage = "https://testheroku1088.herokuapp.com/welcome.php?token=$token&email=$email";
-                $phpmailer->Body    = 'You will be subscribed to XKCD challenge after verifying!
+                $phpmailer->Body    = 'You will be subscribed to XKCD comic Mailer after verifying!
                 <button type="submit" "><a style="color: black; text-decoration: none;" href='.$welcomePage.'>Subscribe</a></button>
                 ';
                 if ($phpmailer->send()) {
