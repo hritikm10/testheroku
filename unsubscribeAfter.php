@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 session_start();
-?>
+?> -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,8 +24,8 @@ if ($emailV) {
     $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$emailV'";
     $result = mysqli_query($conn, $sql);
     $resultDel = mysqli_query($conn, $sqldel);
-    session_unset();
-    session_destroy();
+    // session_unset();
+    // session_destroy();
     if ($result) {
         echo '<div class="container1">
         <div class="brand-title" style="color: red;">unSubscribed!!!</div>

@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 session_start();
-?>
+?> -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,17 +15,18 @@ session_start();
 
 <body>
 <?php
-$email = $_SESSION['email'];
-$emailV = $_GET['email'];
-if ($email == $emailV) {
+// $email = $_SESSION['email'];
+$getEmail = $_GET['email'];
+$getToken = $_GET['token'];
+if ($getEmail && $$getToken) {
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
     include '_dbConnect.php';
-    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$email'";
-    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$email'";
+    $sql = "UPDATE `users` SET `active` = '0' WHERE `users`.`email` = '$getEmail' AND `users`.`token` = '$getToken'";
+    $sqldel = "DELETE FROM `users` WHERE `users`.`email` = '$getEmail' AND `users`.`token` = '$getToken'";
     $result = mysqli_query($conn, $sql);
     $resultDel = mysqli_query($conn, $sqldel);
-    session_unset();
-    session_destroy();
+    // session_unset();
+    // session_destroy();
     if ($result) {
         echo '<div class="container1">
         <div class="brand-title" style="color: red;">unSubscribed!!!</div>

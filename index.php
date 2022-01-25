@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include '_dbConnect.php';
 require("vendor/autoload.php");
 require_once("php-mailer/PHPMailer.php");
@@ -12,7 +12,6 @@ require 'vendor/autoload.php';
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,8 +45,8 @@ require 'vendor/autoload.php';
         if ($row == 0) {
             $token = bin2hex(random_bytes(25));
             $email = $_POST['email'];
-            $_SESSION['tokenS'] = $token;
-            $_SESSION['email'] = $email;
+            // $_SESSION['tokenS'] = $token;
+            // $_SESSION['email'] = $email;
             $sql = "INSERT INTO `users` (`sno`, `email`, `tstamp`, `active`, `token`) VALUES (NULL, '$email', current_timestamp(), '0', '$token');";
             $result = mysqli_query($conn, $sql);
 
@@ -66,8 +65,10 @@ require 'vendor/autoload.php';
                 $phpmailer->addAddress($email);
                 $phpmailer->isHTML(true);
                 $phpmailer->Subject = "Verify email";
-                $phpmailer->Body    = "You will be subscribed to XKCD challenge after verifying!
-                https://testheroku1088.herokuapp.com/welcome.php?token=$token\n";
+                $welcomePage = "https://testheroku1088.herokuapp.com/welcome.php?token=$token&email=$email";
+                $phpmailer->Body    = 'You will be subscribed to XKCD challenge after verifying!
+                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href='.$welcomePage.'>Subscribe</a></button>
+                ';
                 if ($phpmailer->send()) {
                     echo '<div class="alert">
                     <p> <strong>Email verification sent!!! <br> </strong>  Please verify your email address.</p>

@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 session_start();
-?>
+?> -->
 
 <!doctype html>
 <html lang="en">
@@ -25,24 +25,25 @@ session_start();
 </html>
 
 <?php
-$tokenS = $_SESSION['tokenS'];
+// $tokenS = $_SESSION['tokenS'];
 $getValue = $_GET['token'];
+$getEmail = $_GET['email'];
 include '_dbConnect.php';
-if ($getValue == $tokenS) {
+if ($getValue) {
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
-    $email = $_SESSION['email'];
-    $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`email` = '$email'";
+    // $email = $_SESSION['email'];
+    $sql = "UPDATE `users` SET `active` = '1' WHERE `users`.`token` = '$getValue'";
     $result = mysqli_query($conn, $sql);
 } 
 else {
     
 }
 
-$sqlMails = "SELECT * from users WHERE email='$email' AND active = '1' ";
+$sqlMails = "SELECT * from users WHERE token='$getValue' AND active = '1' ";
 $result = mysqli_query($conn, $sqlMails);
 $rows = mysqli_num_rows($result);
 if ($rows) {
-    header("Location: sendMail.php");
+    header("Location: sendMail.php?token=$getValue&email=$getEmail");
 }
 else{
     echo ' <div class="container2">

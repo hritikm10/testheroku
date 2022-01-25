@@ -1,17 +1,18 @@
 <?php
-session_start();
+// session_start();
 include '_dbConnect.php';
 require("vendor/autoload.php");
 require_once("php-mailer/PHPMailer.php");
 require_once("php-mailer/SMTP.php");
 require_once("php-mailer/Exception.php");
-$email = $_SESSION['email'];
-
+// $email = $_SESSION['email'];
+$getToken = $_GET['token'];
+$getEmail = $_GET['token'];
 use PHPMailer\PHPMailer\PHPMailer;
 ?>
   <?php
     $indexPage = "https://testheroku1088.herokuapp.com/index.php";
-	$email = $_SESSION['email'];
+	// $email = $_SESSION['email'];
 	$rand_comic = rand(0, 1000);
 	$api_url    = 'http://xkcd.com/' . $rand_comic . '/info.0.json';
 	$json_data = file_get_contents($api_url);
@@ -20,7 +21,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$name = $comic->title;
 	$img = $comic->img;
 	$subject = "$comic->title";
-	$urlun = "https://testheroku1088.herokuapp.com/unsubscribe.php?email=$email";
+	$urlun = "https://testheroku1088.herokuapp.com/unsubscribe.php?token=$getToken&email=$getEmail";
 	$mail = new PHPMailer(true);
 	$mail->isSMTP();
 	$mail->SMTPAuth = true;
@@ -30,7 +31,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 	$mail->Username = "testmailassignmentphp@gmail.com";
 	$mail->Password = "Hritik@123!!";
 	$mail->setFrom("testmailassignmentphp@gmail.com");
-	$mail->addAddress($email);
+	$mail->addAddress($getEmail);
 	$mail->isHTML(true);
 	$mail->Subject = "New Comic Arrived...";
 	$mail->Body = '
